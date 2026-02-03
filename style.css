@@ -3,58 +3,52 @@
   --black: #121212;
   --white: #ffffff;
 
-  --social-zone-height: 120px;
-
-  /* Burst intensity */
-  --burst-alpha: 0.14;
-
-  /* Layout */
   --max: 1200px;
   --pad-x: 56px;
   --pad-y: 44px;
 
-  /* CTA */
-  --cta-radius: 24px;
+  --burst-alpha: 0.14;
 
-  /* Social */
+  --cta-radius: 24px;
   --social-bottom: 40px;
+
+  /* Réserve réelle pour que le CTA ne descende jamais dans la zone socials */
+  --social-reserved: 140px;
 }
 
 *{ box-sizing: border-box; }
 
-html, body{
-  height: 100%;
-}
+html, body{ height: 100%; }
 
 body{
   margin: 0;
-  height: 100svh;                 /* ✅ plein écran mobile sans scroll chelou */
-  overflow: hidden;               /* ✅ pas de scroll */
+  height: 100svh;
+  overflow: hidden;
   background: var(--orange);
   color: var(--white);
 
   font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 400;               /* ✅ regular partout */
+  font-weight: 400;
 }
 
-/* ===== Burst global derrière TOUT ===== */
+/* ===== Burst global derrière tout ===== */
 .burst-bg{
   position: fixed;
   left: 50%;
   top: 50%;
+  width: min(950px, 120vw);
+  height: min(950px, 120vw);
   transform: translate(-50%, -50%);
-  width: min(950px, 115vw);
-  height: min(950px, 115vw);
+  transform-origin: center;
+
   z-index: 0;
   pointer-events: none;
 
   background: rgba(255,255,255,var(--burst-alpha));
-
   -webkit-mask: url("burst.svg") center / contain no-repeat;
   mask: url("burst.svg") center / contain no-repeat;
 
-  animation: burst-spin 60s linear infinite; /* ✅ rotation lente infinie */
-  transform-origin: center;
+  animation: burst-spin 70s linear infinite;
 }
 
 @keyframes burst-spin{
@@ -62,7 +56,7 @@ body{
   to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* ===== Tout le contenu doit passer au-dessus ===== */
+/* ===== Contenu au-dessus ===== */
 .topbar, .hero, .social-fixed{
   position: relative;
   z-index: 1;
@@ -76,15 +70,15 @@ body{
   width: 100%;
 
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 24px;
 }
 
 .logo{
-  display: block;
   height: 56px;
   width: auto;
+  display: block;
 }
 
 .tagline{
@@ -95,25 +89,20 @@ body{
   font-weight: 400;
 }
 
-/* ===== Hero (centré, et tient dans le viewport) ===== */
+/* ===== Hero ===== */
+/* IMPORTANT : on donne au hero une hauteur qui exclut la zone réservée aux socials */
 .hero{
   max-width: var(--max);
   width: 100%;
-  height: calc(100svh - 140px - var(--social-zone-height));
-}
-
   margin: 0 auto;
+  padding: 0 var(--pad-x) var(--social-reserved);
 
-  /* Important: hauteur calculée pour éviter le scroll :
-     - header prend sa place
-     - social est fixed en bas
-     - hero occupe le reste
-  */
-  height: calc(100svh - 140px);   /* ajusté pour coller à ton rendu */
-  padding: 0 var(--pad-x);
+  height: calc(100svh - (2 * var(--pad-y)) - 70px); /* header approx (logo + breathing) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  display: grid;
-  place-items: center;
   text-align: center;
 }
 
@@ -125,21 +114,16 @@ body{
   line-height: 1.02;
 }
 
-/* CTA (moins collé à la tagline : on gère l’espace avec un wrapper) */
-.hero > *{
-  justify-self: center;
-}
-
-/* On force un peu d’air entre titre et bouton */
+/* CTA : 24px sous le titre */
 .cta{
-  margin-top: 16px;               /* ✅ plus d’air */
+  margin-top: 24px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   font-size: 24px;
   font-weight: 400;
-  letter-spacing: 0;
   line-height: 1.2;
 
   padding: 16px 34px;
@@ -155,41 +139,37 @@ body{
 .cta:hover{ transform: translateY(-1px); opacity: 0.95; }
 .cta:active{ transform: translateY(0px) scale(0.98); }
 
-/* ===== Social fixé à 40px du bas ===== */
+/* ===== Social FIXE à 40px du bas ===== */
 .social-fixed{
-  position: fixed;
+  position: fixed !important; /* ✅ force si un ancien style traîne */
   left: 50%;
   bottom: var(--social-bottom);
   transform: translateX(-50%);
   display: flex;
   gap: 14px;
-  z-index: 2;                     /* ✅ au-dessus de tout */
+  z-index: 2;
 }
 
 .icon{
   width: 56px;
   height: 56px;
+  border-radius: 16px;
 
-  border-radius: 16px;            /* comme ton screen */
-  background: rgba(0,0,0,1);
-
+  background: rgba(0,0,0,1); /* ✅ opacité 100% */
   display: grid;
   place-items: center;
+
   text-decoration: none;
-
-  transition: transform 120ms ease, background 120ms ease;
+  transition: transform 120ms ease;
 }
-.icon:hover{
-  transform: translateY(-1px);
-  background: rgba(0,0,0,1);
-}
+.icon:hover{ transform: translateY(-1px); }
 
-/* ===== Responsive ===== */
+/* ===== Mobile ===== */
 @media (max-width: 720px){
   :root{
     --pad-x: 22px;
     --pad-y: 28px;
-    --social-bottom: 40px;        /* inchangé */
+    --social-reserved: 130px;
   }
 
   .topbar{
@@ -202,13 +182,7 @@ body{
     font-size: 16px;
   }
 
-  .logo{
-    height: 44px;
-  }
-
-  .hero{
-    height: calc(100svh - 150px);
-  }
+  .logo{ height: 44px; }
 
   .title{
     font-size: clamp(44px, 11vw, 84px);
@@ -219,13 +193,11 @@ body{
     font-size: 20px;
     padding: 14px 26px;
     border-radius: 22px;
-    margin-top: 28px;
   }
 
   .icon{
     width: 54px;
     height: 54px;
-    border-radius: 16px;
   }
 
   .burst-bg{
