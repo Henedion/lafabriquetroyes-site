@@ -34,6 +34,19 @@ body{
   line-height: 1;
 }
 
+.logo {
+  display: block;
+  height: 48px;          /* ajuste si besoin */
+  width: auto;
+}
+
+@media (max-width: 720px) {
+  .logo {
+    height: 40px;
+  }
+}
+
+
 .tagline{
   text-align: right;
   font-size: 20px;
