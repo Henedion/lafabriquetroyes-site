@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>La Fabrique Troyes</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
 
+    <!-- Google Font: Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header class="topbar">
       <div class="brand">
-  <img
-    src="logo-la-fabrique.svg"
-    alt="La Fabrique Troyes"
-    class="logo"
-  />
-</div>
-
+        <img
+          src="logo-la-fabrique.svg"
+          alt="La Fabrique Troyes"
+          class="logo"
+        />
+      </div>
 
       <div class="tagline">
         Stand-up & spectacle vivant<br />
@@ -42,10 +43,11 @@
     </main>
 
     <footer class="footer">
+      <!-- Burst décoratif en arrière-plan -->
       <div class="burst" aria-hidden="true"></div>
 
       <div class="social">
-        <a class="icon" href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <a class="icon" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2">
             <rect x="4" y="4" width="16" height="16" rx="4"></rect>
             <circle cx="12" cy="12" r="3.5"></circle>
@@ -53,7 +55,7 @@
           </svg>
         </a>
 
-        <a class="icon" href="https://facebook.com" target="_blank" aria-label="Facebook">
+        <a class="icon" href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
             <path d="M13.5 22v-8h2.6l.4-3h-3V9.1c0-.9.3-1.6 1.7-1.6h1.4V4.8c-.7-.1-1.6-.2-2.7-.2-2.7 0-4.5 1.6-4.5 4.6V11H7v3h2.4v8h4.1z"/>
           </svg>
@@ -67,7 +69,8 @@
         </a>
       </div>
 
-      <div id="events" class="events-anchor"></div>
+      <!-- Ancre (pour le bouton) -->
+      <div id="events" class="events-anchor" aria-hidden="true"></div>
     </footer>
   </body>
 </html>
