@@ -127,7 +127,7 @@ body{
 
 /* On force un peu d’air entre titre et bouton */
 .cta{
-  margin-top: 34px;               /* ✅ plus d’air */
+  margin-top: 16px;               /* ✅ plus d’air */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -166,7 +166,7 @@ body{
   height: 56px;
 
   border-radius: 16px;            /* comme ton screen */
-  background: rgba(0,0,0,0.78);
+  background: rgba(0,0,0,1);
 
   display: grid;
   place-items: center;
@@ -176,7 +176,7 @@ body{
 }
 .icon:hover{
   transform: translateY(-1px);
-  background: rgba(0,0,0,0.86);
+  background: rgba(0,0,0,1);
 }
 
 /* ===== Responsive ===== */
