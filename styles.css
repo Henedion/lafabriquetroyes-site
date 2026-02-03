@@ -8,9 +8,11 @@
 
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
+
 body{
   margin: 0;
-  font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;  background: var(--orange);
+  font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--orange);
   color: var(--white);
   overflow-x: hidden;
 }
@@ -27,30 +29,23 @@ body{
 }
 
 .brand{
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: 48px;
-  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
-.logo {
+/* SVG Logo */
+.logo{
   display: block;
-  height: 32px;          /* ajuste si besoin */
+  height: 48px; /* ajuste si besoin */
   width: auto;
 }
-
-@media (max-width: 720px) {
-  .logo {
-    height: 40px;
-  }
-}
-
 
 .tagline{
   text-align: right;
   font-size: 20px;
   line-height: 1.35;
   opacity: 0.95;
+  font-weight: 400;
 }
 
 /* Hero */
@@ -68,7 +63,7 @@ body{
 
 .title{
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.03em;
   font-size: clamp(44px, 8vw, 112px);
   line-height: 1.02;
@@ -170,10 +165,9 @@ body{
       transparent 350deg 360deg
     );
   border-radius: 50%;
-  filter: blur(0px);
 }
 
-/* Une petite ancre invisible */
+/* Ancre invisible */
 .events-anchor{
   position: absolute;
   bottom: 0;
@@ -193,7 +187,13 @@ body{
     text-align: left;
     font-size: 16px;
   }
-  .brand{ font-size: 40px; }
-  .hero{ padding: 18px 22px 0; }
-  .footer{ height: 200px; }
+  .logo{
+    height: 40px;
+  }
+  .hero{
+    padding: 18px 22px 0;
+  }
+  .footer{
+    height: 200px;
+  }
 }
