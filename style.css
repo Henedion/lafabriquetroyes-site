@@ -99,6 +99,9 @@ body{
 .hero{
   max-width: var(--max);
   width: 100%;
+  height: calc(100svh - 140px - var(--social-zone-height));
+}
+
   margin: 0 auto;
 
   /* Important: hauteur calculée pour éviter le scroll :
