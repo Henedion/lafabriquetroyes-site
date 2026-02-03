@@ -1,204 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">:root{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--orange: #F24B1B; <span class="Apple-converted-space">        </span>/* ajuste si besoin */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--orange-burst: rgba(255,255,255,0.12);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--black: #121212;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--white: #ffffff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--max: 1200px;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">*{ box-sizing: border-box; }</span></p>
-<p class="p1"><span class="s1">html, body{ height: 100%; }</span></p>
-<p class="p1"><span class="s1">body{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: var(--orange);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>color: var(--white);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>overflow-x: hidden;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Top bar */</span></p>
-<p class="p1"><span class="s1">.topbar{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>max-width: var(--max);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding: 44px 56px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>align-items: flex-start;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>justify-content: space-between;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>gap: 24px;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.brand{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-weight: 800;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>letter-spacing: -0.02em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-size: 48px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>line-height: 1;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.tagline{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-align: right;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-size: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>line-height: 1.35;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>opacity: 0.95;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Hero */</span></p>
-<p class="p1"><span class="s1">.hero{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>max-width: var(--max);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding: 40px 56px 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>min-height: calc(100vh - 160px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-align: center;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.title{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-weight: 400;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>letter-spacing: -0.03em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-size: clamp(44px, 8vw, 112px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>line-height: 1.02;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.cta{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin-top: 28px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: inline-flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>padding: 14px 22px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>border-radius: 999px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: var(--black);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>color: var(--white);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-weight: 600;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>transition: transform 120ms ease, opacity 120ms ease;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">.cta:hover{ transform: translateY(-1px); opacity: 0.95; }</span></p>
-<p class="p1"><span class="s1">.cta:active{ transform: translateY(0px) scale(0.98); }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Footer / Social */</span></p>
-<p class="p1"><span class="s1">.footer{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: relative;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 220px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>place-items: center;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.social{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: relative;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>z-index: 2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>gap: 14px;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">.icon{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 52px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 52px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>border-radius: 999px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: rgba(0,0,0,0.72);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>display: grid;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>place-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>transition: transform 120ms ease, background 120ms ease;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">.icon:hover{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>transform: translateY(-1px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background: rgba(0,0,0,0.82);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Burst (soleil / explosion) */</span></p>
-<p class="p1"><span class="s1">.burst{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>inset: auto 50% 10px auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>transform: translateX(50%);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: min(640px, 86vw);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>aspect-ratio: 1 / 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>z-index: 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>opacity: 0.9;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>conic-gradient(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>from -10deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 0 10deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 10deg 20deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 20deg 30deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 30deg 40deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 40deg 50deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 50deg 60deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 60deg 70deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 70deg 80deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 80deg 90deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 90deg 100deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 100deg 110deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 110deg 120deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 120deg 130deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 130deg 140deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 140deg 150deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 150deg 160deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 160deg 170deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 170deg 180deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 180deg 190deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 190deg 200deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 200deg 210deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 210deg 220deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 220deg 230deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 230deg 240deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 240deg 250deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 250deg 260deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 260deg 270deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 270deg 280deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 280deg 290deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 290deg 300deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 300deg 310deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 310deg 320deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 320deg 330deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 330deg 340deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var(--orange-burst) 340deg 350deg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transparent 350deg 360deg</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>border-radius: 50%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>filter: blur(0px);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Une petite ancre invisible */</span></p>
-<p class="p1"><span class="s1">.events-anchor{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>position: absolute;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>bottom: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 1px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 1px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>opacity: 0;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* Responsive */</span></p>
-<p class="p1"><span class="s1">@media (max-width: 720px){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.topbar{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 28px 22px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>align-items: flex-start;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tagline{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>text-align: left;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.brand{ font-size: 40px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hero{ padding: 18px 22px 0; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.footer{ height: 200px; }</span></p>
-<p class="p1"><span class="s1">}</span></p>
-</body>
-</html>
+:root{
+  --orange: #F24B1B;         /* ajuste si besoin */
+  --orange-burst: rgba(255,255,255,0.12);
+  --black: #121212;
+  --white: #ffffff;
+  --max: 1200px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--orange);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* Top bar */
+.topbar{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 44px 56px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand{
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.tagline{
+  text-align: right;
+  font-size: 20px;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* Hero */
+.hero{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 56px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px);
+  text-align: center;
+}
+
+.title{
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  font-size: clamp(44px, 8vw, 112px);
+  line-height: 1.02;
+}
+
+.cta{
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+.cta:hover{ transform: translateY(-1px); opacity: 0.95; }
+.cta:active{ transform: translateY(0px) scale(0.98); }
+
+/* Footer / Social */
+.footer{
+  position: relative;
+  height: 220px;
+  display: grid;
+  place-items: center;
+}
+
+.social{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 14px;
+}
+
+.icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.72);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  transition: transform 120ms ease, background 120ms ease;
+}
+.icon:hover{
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.82);
+}
+
+/* Burst (soleil / explosion) */
+.burst{
+  position: absolute;
+  inset: auto 50% 10px auto;
+  transform: translateX(50%);
+  width: min(640px, 86vw);
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+  opacity: 0.9;
+  background:
+    conic-gradient(
+      from -10deg,
+      var(--orange-burst) 0 10deg,
+      transparent 10deg 20deg,
+      var(--orange-burst) 20deg 30deg,
+      transparent 30deg 40deg,
+      var(--orange-burst) 40deg 50deg,
+      transparent 50deg 60deg,
+      var(--orange-burst) 60deg 70deg,
+      transparent 70deg 80deg,
+      var(--orange-burst) 80deg 90deg,
+      transparent 90deg 100deg,
+      var(--orange-burst) 100deg 110deg,
+      transparent 110deg 120deg,
+      var(--orange-burst) 120deg 130deg,
+      transparent 130deg 140deg,
+      var(--orange-burst) 140deg 150deg,
+      transparent 150deg 160deg,
+      var(--orange-burst) 160deg 170deg,
+      transparent 170deg 180deg,
+      var(--orange-burst) 180deg 190deg,
+      transparent 190deg 200deg,
+      var(--orange-burst) 200deg 210deg,
+      transparent 210deg 220deg,
+      var(--orange-burst) 220deg 230deg,
+      transparent 230deg 240deg,
+      var(--orange-burst) 240deg 250deg,
+      transparent 250deg 260deg,
+      var(--orange-burst) 260deg 270deg,
+      transparent 270deg 280deg,
+      var(--orange-burst) 280deg 290deg,
+      transparent 290deg 300deg,
+      var(--orange-burst) 300deg 310deg,
+      transparent 310deg 320deg,
+      var(--orange-burst) 320deg 330deg,
+      transparent 330deg 340deg,
+      var(--orange-burst) 340deg 350deg,
+      transparent 350deg 360deg
+    );
+  border-radius: 50%;
+  filter: blur(0px);
+}
+
+/* Une petite ancre invisible */
+.events-anchor{
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 1px;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .topbar{
+    padding: 28px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tagline{
+    text-align: left;
+    font-size: 16px;
+  }
+  .brand{ font-size: 40px; }
+  .hero{ padding: 18px 22px 0; }
+  .footer{ height: 200px; }
+}
