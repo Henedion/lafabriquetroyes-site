@@ -1,116 +1,222 @@
-:root {
+:root{
   --orange: #F24B1B;
   --black: #121212;
   --white: #ffffff;
+
+  --max: 1200px;
+  --pad-x: 56px;
+  --pad-y: 44px;
+
+  /* Burst intensity */
+  --burst-alpha: 0.14;
+
+  /* CTA */
+  --cta-radius: 24px;
+
+  /* Social */
+  --social-bottom: 40px;
+  --social-gap: 12px;
+
+  /* Réserve pour éviter que le CTA tombe dans la zone socials */
+  --social-reserved: 140px;
 }
 
-* {
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
-html,
-body {
-  height: 100%;
+html, body{ height: 100%; }
+
+body{
   margin: 0;
-}
+  height: 100svh;
+  overflow: hidden;
 
-body {
-  font-family: "Space Grotesk", system-ui, sans-serif;
   background: var(--orange);
   color: var(--white);
-  overflow: hidden;
-  position: relative;
+
+  font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
 }
 
-/* ===== Burst background ===== */
-.burst-bg {
-  position: absolute;
-  inset: 0;
-  background: url("burst.svg") center / 1200px no-repeat;
-  opacity: 0.35;
-  animation: spin 120s linear infinite;
+/* ===== Burst global derrière TOUT ===== */
+.burst-bg{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(980px, 120vw);
+  height: min(980px, 120vw);
+
   z-index: 0;
+  pointer-events: none;
+
+  background: rgba(255,255,255,var(--burst-alpha));
+
+  -webkit-mask: url("burst.svg") center / contain no-repeat;
+  mask: url("burst.svg") center / contain no-repeat;
+
+  animation: burst-spin 70s linear infinite;
+  transform-origin: center;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes burst-spin{
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* ===== Top bar ===== */
-.topbar {
+/* Tout le contenu au-dessus */
+.topbar, .hero, .social-fixed{
   position: relative;
-  z-index: 2;
+  z-index: 1;
+}
+
+/* ===== Header ===== */
+.topbar{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+  width: 100%;
+
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 40px 56px;
+  gap: 24px;
 }
 
-.logo {
-  font-size: 48px;
-  font-weight: 500;
+.logo{
+  display: block;
+  height: 56px; /* ajuste si besoin */
+  width: auto;
 }
 
-.tagline {
+.tagline{
   text-align: right;
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 20px;
+  line-height: 1.35;
+  opacity: 0.95;
   font-weight: 400;
 }
 
 /* ===== Hero ===== */
-.hero {
-  position: relative;
-  z-index: 2;
-  height: calc(100vh - 200px);
+.hero{
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+
+  /* on réserve de la place en bas pour les socials */
+  padding: 0 var(--pad-x) var(--social-reserved);
+
+  height: calc(100svh - 160px); /* stable, évite le scroll */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
 }
 
-.hero h1 {
-  font-size: clamp(64px, 8vw, 112px);
-  font-weight: 400;
-  line-height: 1.05;
+.title{
   margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  font-size: clamp(54px, 8vw, 112px);
+  line-height: 1.02;
 }
 
-/* CTA — FIXED */
-.cta {
-  margin-top: 24px; /* 🔥 EXACTEMENT ce que tu veux */
+/* CTA : 24px sous le titre */
+.cta{
+  margin-top: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  padding: 16px 34px;
+  border-radius: var(--cta-radius);
+
   background: var(--black);
   color: var(--white);
   text-decoration: none;
-  padding: 16px 32px;
-  border-radius: 999px;
-  font-size: 24px;
-  font-weight: 400;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
 
-.cta:hover {
-  transform: translateY(-2px);
+  transition: transform 120ms ease, opacity 120ms ease;
 }
+.cta:hover{ transform: translateY(-1px); opacity: 0.95; }
+.cta:active{ transform: translateY(0px) scale(0.98); }
 
-/* ===== Social buttons ===== */
-.socials {
-  position: absolute;
-  bottom: 40px;
+/* ===== Social FIXE à 40px du bas ===== */
+.social-fixed{
+  position: fixed;
   left: 50%;
+  bottom: var(--social-bottom);
   transform: translateX(-50%);
-  z-index: 2;
   display: flex;
-  gap: 12px;
+  gap: var(--social-gap);
+  z-index: 2;
 }
 
-.socials a {
+/* Boutons style Figma :
+   - 72x56
+   - radius 24
+   - padding 16 (top/bottom) 24 (left/right)
+   - opacity 100%
+*/
+.icon{
+  width: 72px;
+  height: 56px;
+
+  border-radius: 24px;
+  background: rgba(0,0,0,1);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--black);
-  padding: 16px 24px;
-  border-radius: 24px;
-  opacity: 1;
+
+  text-decoration: none;
+
+  transition: transform 120ms ease;
+}
+.icon:hover{ transform: translateY(-1px); }
+.icon:active{ transform: translateY(0px) scale(0.98); }
+
+/* ===== Mobile ===== */
+@media (max-width: 720px){
+  :root{
+    --pad-x: 22px;
+    --pad-y: 28px;
+    --social-reserved: 130px;
+  }
+
+  .topbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tagline{
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .logo{
+    height: 44px;
+  }
+
+  .title{
+    font-size: clamp(44px, 11vw, 84px);
+    letter-spacing: -0.03em;
+  }
+
+  .cta{
+    font-size: 20px;
+    padding: 14px 26px;
+    border-radius: 22px;
+  }
+
+  .burst-bg{
+    width: min(900px, 150vw);
+    height: min(900px, 150vw);
+    --burst-alpha: 0.12;
+  }
 }
