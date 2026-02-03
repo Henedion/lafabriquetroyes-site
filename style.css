@@ -135,7 +135,7 @@ body{
   height: 420px;                 /* important : donne une “zone” au mask */
   z-index: 1;
 
-  background: rgba(255,255,255,0.16); /* intensité du burst */
+  background: rgba(255,255,255,0.40); /* intensité du burst */
   pointer-events: none;
 
   -webkit-mask: url("burst.svg") center / contain no-repeat;
